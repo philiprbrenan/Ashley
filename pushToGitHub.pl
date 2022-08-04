@@ -17,16 +17,16 @@ my $user = q(philiprbrenan);                                                    
 my $repo = q(Ashley);                                                           # Repo
 my $wf   = q(.github/workflows/main.yml);                                       # Work flow on Ubuntu
 
-my $j = q(Ashley.java);
-my $t = q(TestAshley.java);
+my $j = qq($repo.java);                                                         # Files
+my $t = qq(Test$repo.java);
 my $c = q(./Classes/);
 my $p = q(pushToGitHub.pl);
 my $r = q(README.md);
 
-my ($cm, $cc, $cj, $cz) = my @c = map {s(#.*\Z) ()sr} split /\n/, <<END;
-mkdir -p $c                                                                     # Create the class path
-javac -d $c -cp $c         $j                                                   # Compile the Ashley class and put it on the class path
-java                -cp $c -ea $t                                               # Run the tests in TestAshley.java
+my ($cm, $cc, $cj, $cz) = my @c = map {s(#.*\Z) ()sr} split /\n/, <<END;        # Commands
+mkdir -p $c
+javac -d $c -cp $c         $j
+java                -cp $c -ea $t
 END
 
 for my $c(@c)                                                                   # Say and execute the commands
@@ -34,9 +34,7 @@ for my $c(@c)                                                                   
   say STDERR qx($c);
  }
 
-my @files = ($j, $t, $r, q(pushToGitHub.pl));                                   # Java files to upload
-
-for my $s(@files)                                                               # Upload each selected file
+for my $s($j, $t, $r, q(pushToGitHub.pl))                                       # Upload each selected file
  {my $p = readFile($s);
   my $w = writeFileUsingSavedToken($user, $repo, $s, $p);                       # Write file to github
   lll "$w $s";
