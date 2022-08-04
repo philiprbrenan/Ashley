@@ -1,4 +1,4 @@
-# Test 2022-08-04 at 09:51:31
+# Test 2022-08-04 at 09:54:25
 
 name: Test
 
@@ -18,14 +18,14 @@ jobs:
       run: |
         mkdir -p ./Classes/                                                                     
 
-    - name: Compile
+    - name: Compile all Java files belonging to the package
       run: |
         javac -d ./Classes/ -cp ./Classes/         Ashley.java                                                   
 
-    - name: Java
+    - name: Java - execute the test program
       run: |
         java                -cp ./Classes/ -ea TestAshley.java                                               
 
-    - name: Tree
+    - name: Tree - show the resulting file structure
       run: |
         tree
