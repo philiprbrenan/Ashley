@@ -1,4 +1,4 @@
-# Test 2022-08-04 at 09:54:25
+# Test 2022-08-04 at 09:56:45
 
 name: Test
 
@@ -22,7 +22,7 @@ jobs:
       run: |
         javac -d ./Classes/ -cp ./Classes/         Ashley.java                                                   
 
-    - name: Java - execute the test program
+    - name: Java - execute the test program using the package
       run: |
         java                -cp ./Classes/ -ea TestAshley.java                                               
 
