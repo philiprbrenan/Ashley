@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// Test the Ashley package
+// Test the com.Ashley package
 // Philip R Brenan at appaapps dot com, Appa Apps Ltd, 2022
 //------------------------------------------------------------------------------
 import static com.Ashley.*;
