@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// The com. package
+// The com.Ashley package
 // Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 //------------------------------------------------------------------------------
 package com;
