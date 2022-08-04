@@ -1,4 +1,4 @@
-# Test 2022-08-04 at 09:48:19
+# Test 2022-08-04 at 09:51:31
 
 name: Test
 
@@ -14,8 +14,18 @@ jobs:
       with:
         ref: 'main'
 
-    - name: Java
+    - name: mkdir
       run: |
         mkdir -p ./Classes/                                                                     
+
+    - name: Compile
+      run: |
         javac -d ./Classes/ -cp ./Classes/         Ashley.java                                                   
+
+    - name: Java
+      run: |
         java                -cp ./Classes/ -ea TestAshley.java                                               
+
+    - name: Tree
+      run: |
+        tree
