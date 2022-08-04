@@ -19,7 +19,6 @@ my $wf   = q(.github/workflows/main.yml);                                       
 
 my $j = q(Ashley.java);
 my $t = q(TestAshley.java);
-my $z = q(Ashley.zip);
 my $c = q(./Classes/);
 my $p = q(pushToGitHub.pl);
 my $r = q(README.md);
@@ -28,7 +27,6 @@ my ($cm, $cc, $cj, $cz) = my @c = map {s(#.*\Z) ()sr} split /\n/, <<END;
 mkdir -p $c                                                                     # Create the class path
 javac -d $c -cp $c         $j                                                   # Compile the Ashley class and put it on the class path
 java                -cp $c -ea $t                                               # Run the tests in TestAshley.java
-rm $z; zip  -q         $z $j $t $p                                              # Zip all the files to Ashley
 END
 
 for my $c(@c)                                                                   # Say and execute the commands
