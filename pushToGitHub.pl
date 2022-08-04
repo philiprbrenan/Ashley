@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #-------------------------------------------------------------------------------
-# Compile, test, zip the Ashley class
+# Compile, test and upload the Ashley class
 # Philip R Brenan at appaapps dot com, Appa Apps Ltd Inc., 2022
 #-------------------------------------------------------------------------------
 use v5.30;
