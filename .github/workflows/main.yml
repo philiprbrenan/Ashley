@@ -1,6 +1,6 @@
 # Test
 
-name: Test 2022-08-04 at 09:33:25
+name: Test 2022-08-04 at 09:33:56
 
 on:
   push
@@ -17,6 +17,6 @@ jobs:
     - name: Java
       run: |
         mkdir -p ./Classes/                                                                     
-      javac -d ./Classes/ -cp ./Classes/     Ashley.java                                                       
-      java        -cp ./Classes/ -ea TestAshley.java                                                       
-      rm Ashley.zip; zip  -q         Ashley.zip Ashley.java TestAshley.java pushToGitHub.pl                                              
+        javac -d ./Classes/ -cp ./Classes/     Ashley.java                                                       
+        java        -cp ./Classes/ -ea TestAshley.java                                                       
+        rm Ashley.zip; zip  -q         Ashley.zip Ashley.java TestAshley.java pushToGitHub.pl                                              
